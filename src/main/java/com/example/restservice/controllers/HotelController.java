@@ -57,4 +57,14 @@ public class HotelController{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @DeleteMapping("/hotel/{id}")
+    public ResponseEntity<HttpStatus> deleteHotels(@PathVariable("id") long id) {
+        try {
+            hotelRepository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+        }
+    }
 }
