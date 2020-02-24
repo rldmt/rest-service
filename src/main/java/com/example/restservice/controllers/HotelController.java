@@ -42,4 +42,19 @@ public class HotelController{
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
         }
     }
+
+    @PutMapping("/hotel/{id}")
+    public ResponseEntity<Hotel> updateHotel(@PathVariable("id") long id, @RequestBody Hotel hotel) {
+        Optional<Hotel> tutorialData = hotelRepository.findById(id);
+
+        if (tutorialData.isPresent()) {
+            Hotel _hotel = tutorialData.get();
+            _hotel.setHotel_name(hotel.getHotel_name());
+            _hotel.setStars(hotel.getStars());
+            _hotel.setAddress(hotel.getAddress());
+            return new ResponseEntity<>(hotelRepository.save(_hotel), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }
