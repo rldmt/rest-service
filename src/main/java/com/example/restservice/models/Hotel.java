@@ -21,8 +21,7 @@ public class Hotel {
     public Hotel() {
     }
 
-    public Hotel(long id, String hotel_name, short stars, String address) {
-        this.id = id;
+    public Hotel(String hotel_name, short stars, String address) {
         this.hotel_name = hotel_name;
         this.stars = stars;
         this.address = address;
