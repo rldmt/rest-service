@@ -3,11 +3,11 @@ package com.example.restservice.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "hotel_prop")
+@Table(name = "hotel")
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private long hotel_id;
 
     @Column(name = "hotel_name")
     private String hotel_name;
@@ -27,8 +27,8 @@ public class Hotel {
         this.address = address;
     }
 
-    public long getId() {
-        return id;
+    public long getHotel_id() {
+        return hotel_id;
     }
 
     public String getHotel_name() {
@@ -58,7 +58,7 @@ public class Hotel {
     @Override
     public String toString() {
         return "Hotel{" +
-                "id=" + id +
+                "id=" + hotel_id +
                 ", hotel_name='" + hotel_name + '\'' +
                 ", stars=" + stars +
                 ", address='" + address + '\'' +

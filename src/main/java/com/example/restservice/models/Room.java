@@ -8,7 +8,7 @@ public class Room {
     //  Hibernate relies on an auto-incremented database column to generate the primary key
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long room_id;
 
     @Column(name = "room_type")
     private String roomType;
@@ -25,7 +25,7 @@ public class Room {
     }
 
     public long getId() {
-        return id;
+        return room_id;
     }
 
     public String getRoomType() {
@@ -47,7 +47,7 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" +
-                "id=" + id +
+                "id=" + room_id +
                 ", roomType='" + roomType + '\'' +
                 ", description='" + description + '\'' +
                 '}';
